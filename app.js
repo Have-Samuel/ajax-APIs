@@ -1,7 +1,18 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-undef */
+// second Request
 async function getData() {
   const response = await axios.get('https://swapi.dev/api/planets/');
-  for (const planet of response.data.results) {
-    console.log(planet);
+  // Destructuring
+  const { next, results } = response.data;
+  for (const planet of results) {
+    console.log(planet.name);
+  }
+  // Second request
+  const response2 = await axios.get(next);
+  const results2 = (response2.data.results);
+  for (const planet of results2) {
+    console.log(planet.name);
   }
 }
 
