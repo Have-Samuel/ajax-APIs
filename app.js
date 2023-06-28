@@ -13,8 +13,19 @@ async function getDogByBreed(breed) {
     const img = document.querySelector('#dog');
     img.src = resp.data.message;
   } catch (err) {
+    // console.log(err);
     alert('Breed not found!');
+    getRandomDog();
   }
 }
-getRandomDog();
-getDogByBreed('bulldog');
+// getRandomDog();
+// getDogByBreed('bulldog');
+
+const form = document.querySelector('#searchForm');
+const input = document.querySelector('#search');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  console.log('SUBMIT!');
+  getDogByBreed(input.value);
+  input.value = '';
+});
