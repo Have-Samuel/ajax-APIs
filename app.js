@@ -20,20 +20,32 @@
 // getData();
 // console.log('I HAPPEN AFTER getData()');
 
-// Using SpaceX Launch Data
-async function getLaunches() {
-  const resp = await axios.get('https://api.spacexdata.com/v3/launches/upcoming');
-  // Manipulate the DOM
+// Manipulate the DOM
+
+function makeLaunchLi(launch) {
+  const newLi = document.createElement('LI');
+  const mission = document.createElement('B');
+  mission.innerText = launch.mission_name;
+  newLi.append(mission);
+  newLi.innerHTML += ` - ${launch.rocket.rocket_name}`;
+  newLi.innerHTML += ` => ${launch.details}`;
+  return newLi;
+}
+
+function renderLaunches(launches) {
   const ul = document.querySelector('#launches');
-  for (const launch of resp.data) {
-    const newLi = document.createElement('LI');
-    const mission = document.createElement('B');
-    mission.innerText = launch.mission_name;
-    newLi.append(mission);
-    newLi.innerHTML += ` - ${launch.rocket.rocket_name}`;
-    newLi.innerHTML += ` => ${launch.details}`;
-    ul.append(newLi);
+  for (const launch of launches) {
+    ul.append(makeLaunchLi(launch));
   }
 }
 
-getLaunches();
+// Using SpaceX Launch Data
+async function getLaunches() {
+  const resp = await axios.get('https://api.spacexdata.com/v3/launches/upcoming');
+  renderLaunches(resp.data);
+}
+
+// getLaunches();
+
+const btn = document.querySelector('#getLaunches');
+btn.addEventListener('click', getLaunches);
