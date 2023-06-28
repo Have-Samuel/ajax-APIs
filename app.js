@@ -23,11 +23,16 @@
 // Using SpaceX Launch Data
 async function getLaunches() {
   const resp = await axios.get('https://api.spacexdata.com/v3/launches/upcoming');
-  console.log(resp.data);
+  // Manipulate the DOM
+  const ul = document.querySelector('#launches');
   for (const launch of resp.data) {
-    console.log(launch.mission_name);
-    console.log(launch.details);
-    console.log(launch.rocket);
+    const newLi = document.createElement('LI');
+    const mission = document.createElement('B');
+    mission.innerText = launch.mission_name;
+    newLi.append(mission);
+    newLi.innerHTML += ` - ${launch.rocket.rocket_name}`;
+    newLi.innerHTML += ` => ${launch.details}`;
+    ul.append(newLi);
   }
 }
 
