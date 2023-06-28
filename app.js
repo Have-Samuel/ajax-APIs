@@ -19,3 +19,5 @@ async function getData() {
 // This shows up faster than the async/await funnction
 getData();
 console.log('I HAPPEN AFTER getData()');
+
+// Using SpaceX Launch Data
