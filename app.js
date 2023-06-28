@@ -6,4 +6,15 @@ async function getRandomDog() {
   img.src = resp.data.message;
 }
 
+async function getDogByBreed(breed) {
+  try {
+    const url = `https://dog.ceo/api/breed/${breed}/images/random`;
+    const resp = await axios.get(url);
+    const img = document.querySelector('#dog');
+    img.src = resp.data.message;
+  } catch (err) {
+    alert('Breed not found!');
+  }
+}
 getRandomDog();
+getDogByBreed('bulldog');
