@@ -42,7 +42,7 @@
 // createStory();
 
 async function getGif() {
-  const res = await axios.get('api.giphy.com/v1/gifs/random');
+  const res = await axios.get('http://api.giphy.com/v1/gifs');
   console.log(res);
 }
 
