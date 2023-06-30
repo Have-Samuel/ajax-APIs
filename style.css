@@ -5,44 +5,50 @@
 }
 
 body {
+  margin-top: 1rem;
   font-family: 'Roboto', sans-serif;
   background-color: #f5f5f5;
 }
 
 .container {
+  width: 80%;
   background-color: #0a0a0a;
   border-radius: 5px;
-  max-width: 700px;
-  margin: 1rem auto 0 auto;
-  height: 500px;
+  max-width: 800vw;
+  height: 50vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: auto;
+  border: 3px solid green;
 }
 
 h1 {
-  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 8vw;
   font-weight: 700;
   text-align: center;
-  margin-top: 1rem;
   color: #ca9c9c;
+  margin: 1rem 0;
 }
 
 form {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 600vw;
+  margin: 1rem auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
+  justify-content: space-evenly;
+  /* gap: 10px; */
   padding: 1rem 0;
+  /* margin: 1rem; */
 }
 
 form input {
   width: 40%;
-  height: 70px;
+  height: 40px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -51,20 +57,20 @@ form input {
 }
 
 ::placeholder {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  color: #ddd;
+  color: #c4bebe;
   padding-left: 10px;
 }
 
 form button {
-  width: 30%;
-  height: 70px;
+  width: 40%;
+  height: 40px;
   background-color: #ff6b6b;
   border: none;
   border-radius: 5px;
   color: #fff;
-  font-size: 24px;
+  font-size: 17px;
   font-weight: 700;
   cursor: pointer;
 }
