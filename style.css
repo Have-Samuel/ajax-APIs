@@ -11,10 +11,9 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 50%;
   background-color: #0a0a0a;
   border-radius: 5px;
-  max-width: 800vw;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -26,8 +25,7 @@ body {
 h1 {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  font-size: 8vw;
+  font-size: 4vw;
   font-weight: 700;
   text-align: center;
   color: #ca9c9c;
@@ -35,15 +33,12 @@ h1 {
 }
 
 form {
-  max-width: 600vw;
-  margin: 1rem auto;
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  /* gap: 10px; */
-  padding: 1rem 0;
-  /* margin: 1rem; */
+  justify-content: space-around;
+  gap: 1rem;
 }
 
 form input {
@@ -70,7 +65,7 @@ form button {
   border: none;
   border-radius: 5px;
   color: #fff;
-  font-size: 17px;
+  font-size: 1.9vw;
   font-weight: 700;
   cursor: pointer;
 }
