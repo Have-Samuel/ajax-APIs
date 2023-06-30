@@ -43,6 +43,7 @@ form {
 
 form input {
   width: 40%;
+  min-width: 90px;
   height: 40px;
   background-color: #fff;
   border: 1px solid #ddd;
