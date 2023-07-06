@@ -42,8 +42,17 @@
 // createStory();
 
 async function getGif() {
-  const res = await axios.get('http://api.giphy.com/v1/gifs');
-  console.log(res);
+  const res = await axios.get('http://api.spacexdata.com/v3/launches/upcoming');
+  const output = document.querySelector('#result');
+  for (let launch of res.data) {
+    const show = document.createElement('div');
+    const mission = document.createElement('B');
+    mission.innerText = launch.mission_name;
+    show.append(mission);
+    show.innerHTML += ` - ${launch.rocket.rocket_name}`;
+    show.style = 'color: white';
+    output.append(show);
+  }
 }
 
 getGif();
