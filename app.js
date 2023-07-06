@@ -41,31 +41,46 @@
 // // getUserWithAuth();
 // createStory();
 
-function makeShow(launch) {
-  const show = document.createElement('div');
-  const mission = document.createElement('B');
-  mission.innerText = launch.mission_name;
-  show.append(mission);
-  show.innerHTML += ` - ${launch.rocket.rocket_name}`;
-  show.style = 'color: white';
-  return show;
+// function makeShow(launch) {
+//   const show = document.createElement('div');
+//   const mission = document.createElement('B');
+//   mission.innerText = launch.mission_name;
+//   show.append(mission);
+//   show.innerHTML += ` - ${launch.rocket.rocket_name}`;
+//   show.style = 'color: white';
+//   return show;
+// }
+
+// function renderLaunches(launches) {
+//   const output = document.querySelector('#result');
+//   for (const launch of launches) {
+//     output.append(makeShow(launch));
+//   }
+// }
+
+// async function getGif() {
+//   const res = await axios.get('http://api.spacexdata.com/v3/launches/upcoming');
+//   renderLaunches(res.data);
+// }
+
+// const btn = document.querySelector('#search-Btn');
+// btn.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   getGif();
+// });
+// // getGif();
+
+async function getRand() {
+  const res = await axios.get('https://dog.ceo/api/breeds/image/random');
+  const img = document.querySelector('#dog');
+  img.src = res.data.message;
 }
 
-function renderLaunches(launches) {
-  const output = document.querySelector('#result');
-  for (const launch of launches) {
-    output.append(makeShow(launch));
-  }
+async function getDogByBreed(breed) {
+  const url = `https://dog.ceo/api/breed/${breed}/images/random`;
+  const res = await axios.get(url);
+  const img = document.querySelector('#dog');
+  img.src = res.data.message;
 }
 
-async function getGif() {
-  const res = await axios.get('http://api.spacexdata.com/v3/launches/upcoming');
-  renderLaunches(res.data);
-}
-
-const btn = document.querySelector('#search-Btn');
-btn.addEventListener('click', (e) => {
-  e.preventDefault();
-  getGif();
-});
-// getGif();
+getDogByBreed('labrador');
