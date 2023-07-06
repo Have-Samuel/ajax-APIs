@@ -14,7 +14,8 @@ body {
   width: 80%;
   background-color: #0a0a0a;
   border-radius: 5px;
-  height: 70vh;
+  height: 50vh;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +77,8 @@ form button {
 }
 
 .display img {
-  max-width: 66%;
+  max-width: 55vw;
+  max-height: 40vh;
   border-radius: 5px;
   border: 1px solid #1f1d1d;
 }
