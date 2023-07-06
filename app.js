@@ -41,37 +41,43 @@
 // // getUserWithAuth();
 // createStory();
 
-// function makeShow(launch) {
+// function makeShow(breed) {
 //   const show = document.createElement('div');
 //   const mission = document.createElement('B');
-//   mission.innerText = launch.mission_name;
+//   mission.innerText = breed;
 //   show.append(mission);
 //   show.innerHTML += ` - ${launch.rocket.rocket_name}`;
 //   show.style = 'color: white';
 //   return show;
 // }
 
-// function renderLaunches(launches) {
+// function renderLaunches(breeds) {
 //   const output = document.querySelector('#result');
-//   for (const launch of launches) {
-//     output.append(makeShow(launch));
+//   for (let breed of breeds) {
+//     output.append(makeShow(breed));
 //   }
 // }
 
 // async function getGif() {
-//   const res = await axios.get('http://api.spacexdata.com/v3/launches/upcoming');
+//   const res = await axios.get('https://dog.ceo/api/breeds/image/random');
 //   renderLaunches(res.data);
 // }
-
+// // const form = document.querySelector('#search-form');
+// // const input = document.querySelector('#gifs');
+// // form.addEventListener('submit', (e) => {
+// //   e.preventDefault();
+// //   getGif(input.value);
+// // });
 // const btn = document.querySelector('#search-Btn');
 // btn.addEventListener('click', (e) => {
-//   e.preventDefault();
+
 //   getGif();
 // });
 // // getGif();
 
-async function getRand() {
+async function getRandomDog() {
   const res = await axios.get('https://dog.ceo/api/breeds/image/random');
+  const show = document.createElement('div');
   const img = document.querySelector('#dog');
   img.src = res.data.message;
 }
@@ -83,8 +89,15 @@ async function getDogByBreed(breed) {
     const img = document.querySelector('#dog');
     img.src = res.data.message;
   } catch (e) {
-    alert('BREED NOT FOUND!!');
+    console.log(e);
+    getRand();
   }
 }
 
-getDogByBreed('labrado');
+const form = document.querySelector('#search-form');
+const input = document.querySelector('#gifs');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  getGif(input.value);
+});
+getDogByBreed('labrador');
