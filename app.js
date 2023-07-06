@@ -77,10 +77,14 @@ async function getRand() {
 }
 
 async function getDogByBreed(breed) {
-  const url = `https://dog.ceo/api/breed/${breed}/images/random`;
-  const res = await axios.get(url);
-  const img = document.querySelector('#dog');
-  img.src = res.data.message;
+  try {
+    const url = `https://dog.ceo/api/breed/${breed}/images/random`;
+    const res = await axios.get(url);
+    const img = document.querySelector('#dog');
+    img.src = res.data.message;
+  } catch {
+    alert('BREED NOT FOUND!!');
+  }
 }
 
-getDogByBreed('labrador');
+getDogByBreed('labrado');
