@@ -68,3 +68,15 @@ form button {
   font-weight: 700;
   cursor: pointer;
 }
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display img {
+  max-width: 66%;
+  border-radius: 5px;
+  border: 1px solid #1f1d1d;
+}
