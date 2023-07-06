@@ -41,18 +41,31 @@
 // // getUserWithAuth();
 // createStory();
 
-async function getGif() {
-  const res = await axios.get('http://api.spacexdata.com/v3/launches/upcoming');
+function makeShow(launch) {
+  const show = document.createElement('div');
+  const mission = document.createElement('B');
+  mission.innerText = launch.mission_name;
+  show.append(mission);
+  show.innerHTML += ` - ${launch.rocket.rocket_name}`;
+  show.style = 'color: white';
+  return show;
+}
+
+function renderLaunches(launches) {
   const output = document.querySelector('#result');
-  for (let launch of res.data) {
-    const show = document.createElement('div');
-    const mission = document.createElement('B');
-    mission.innerText = launch.mission_name;
-    show.append(mission);
-    show.innerHTML += ` - ${launch.rocket.rocket_name}`;
-    show.style = 'color: white';
-    output.append(show);
+  for (const launch of launches) {
+    output.append(makeShow(launch));
   }
 }
 
-getGif();
+async function getGif() {
+  const res = await axios.get('http://api.spacexdata.com/v3/launches/upcoming');
+  renderLaunches(res.data);
+}
+
+const btn = document.querySelector('#search-Btn');
+btn.addEventListener('click', (e) => {
+  e.preventDefault();
+  getGif();
+});
+// getGif();
