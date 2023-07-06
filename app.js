@@ -82,7 +82,7 @@ async function getDogByBreed(breed) {
     const res = await axios.get(url);
     const img = document.querySelector('#dog');
     img.src = res.data.message;
-  } catch {
+  } catch (e) {
     alert('BREED NOT FOUND!!');
   }
 }
