@@ -79,7 +79,10 @@ async function getRandomDog() {
   const res = await axios.get('https://dog.ceo/api/breeds/image/random');
   const show = document.createElement('div');
   const img = document.querySelector('#dog');
+  
   img.src = res.data.message;
+
+  show.append(img);
 }
 
 async function getDogByBreed(breed) {
@@ -90,7 +93,7 @@ async function getDogByBreed(breed) {
     img.src = res.data.message;
   } catch (e) {
     console.log(e);
-    getRand();
+    getRandomDog();
   }
 }
 
