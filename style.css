@@ -60,13 +60,13 @@ form input {
 }
 
 form button {
-  width: 40%;
+  /* width: 40%; */
   height: 40px;
   background-color: #ff6b6b;
   border: none;
   border-radius: 5px;
   color: #fff;
-  font-size: 1.3vh;
+  font-size: 1vh;
   font-weight: 700;
   cursor: pointer;
 }
@@ -89,4 +89,72 @@ form button:hover {
   max-height: 40vh;
   border-radius: 5px;
   border: 1px solid #1f1d1d;
+}
+
+@media (min-width: 376px) {
+  .container {
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 3.8vw;
+  }
+
+  :placeholder {
+    font-size: 1.5vh;
+    font-weight: 700;
+    color: #c4bebe;
+    padding-left: 10px;
+  }
+
+  form button {
+    width: 50%;
+    height: 40px;
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.1vh;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  form input {
+    width: 30%;
+  }
+
+  .display img {
+    max-width: 40vw;
+    max-height: 33vh;
+  }
+
+  @media (min-width: 686px) {
+    .container {
+      width: 80%;
+      height: 60vh;
+    }
+
+    h1 {
+      font-size: 4vw;
+    }
+
+    form button {
+      width: 70%;
+      height: 40px;
+      background-color: #ff6b6b;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 2.4vh;
+    }
+
+    form input {
+      width: 50%;
+    }
+
+    .display img {
+      max-width: 30vw;
+      max-height: 35vh;
+    }
+  }
 }
