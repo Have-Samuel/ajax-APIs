@@ -49,10 +49,11 @@ form input {
   border-radius: 5px;
   padding: 0 10px;
   outline: none;
+  cursor: pointer;
 }
 
 ::placeholder {
-  font-size: 20px;
+  font-size: 1.5vh;
   font-weight: 700;
   color: #c4bebe;
   padding-left: 10px;
@@ -65,9 +66,14 @@ form button {
   border: none;
   border-radius: 5px;
   color: #fff;
-  font-size: 1.9vw;
+  font-size: 1.3vh;
   font-weight: 700;
   cursor: pointer;
+}
+
+form button:hover {
+  background-color: #fff;
+  color: #ff6b6b;
 }
 
 .display {
@@ -78,6 +84,7 @@ form button {
 }
 
 .display img {
+  margin-top: 1rem;
   max-width: 55vw;
   max-height: 40vh;
   border-radius: 5px;
