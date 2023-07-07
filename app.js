@@ -89,7 +89,6 @@ const removeBtn = document.querySelector('#remove');
 removeBtn.addEventListener('click', () => {
   const img = document.querySelector('#dog');
   img.remove();
-  // getRandomDog = null;
 });
 
 async function getDogByBreed(breed) {
@@ -100,7 +99,7 @@ async function getDogByBreed(breed) {
     img.src = res.data.message;
   } catch (e) {
     console.log(e);
-    // alert('BREED NOT FOUND!!');
+    alert('BREED NOT FOUND!!');
     getRandomDog();
   }
 }
@@ -113,4 +112,3 @@ form.addEventListener('submit', (e) => {
   input.value = '';
 });
 getDogByBreed();
-// 'labrador'
