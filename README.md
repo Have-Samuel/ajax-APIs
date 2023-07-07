@@ -1,6 +1,6 @@
 # ****AJAX Giphy Party****
 
-[ajax-giphy-party-exerrcise-starter.zip](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71d6d99b-4c82-4c20-84a6-a3c615454650/ajax-giphy-party-exerrcise-starter.zip)
+[ajax-giphy-party-exerrcise-starter.zip](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71d6d99b-4c82-4c20-84a6-a3c61545465/ajax-giphy-party-exerrcise-starter.zip)
 
 It’s time to build something fun with your knowledge of axios and AJAX! For this exercise we will be using the Giphy API! This will require you to use an API key and understand some of the documentation about the API.
 
@@ -14,7 +14,7 @@ Your application should do the following:
 - Allow the user to remove all of the GIFs by clicking a button
 - Here is an example of what the application might look like
 
-![long gif size… could take few seconds to load on your page](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7cfaa680-8b92-4885-bdba-d022d033a054/app.gif)
+![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7cfaa680-8b92-4885-bdba-d022d033a054/app.gif)
 
 long gif size… could take few seconds to load on your page
 
