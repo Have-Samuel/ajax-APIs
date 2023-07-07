@@ -77,10 +77,10 @@
 
 async function getRandomDog() {
   const res = await axios.get('https://dog.ceo/api/breeds/image/random');
-  const show = document.createElement('div');
-  const img = document.querySelector('#dog');
+  const show = document.querySelector('#result');
+  const img = document.createElement('img');
+  img.id = 'dog';
   img.src = res.data.message;
-
   show.append(img);
 }
 
@@ -92,6 +92,7 @@ async function getDogByBreed(breed) {
     img.src = res.data.message;
   } catch (e) {
     console.log(e);
+    alert('BREED NOT FOUND!!');
     getRandomDog();
   }
 }
@@ -100,6 +101,8 @@ const form = document.querySelector('#search-form');
 const input = document.querySelector('#gifs');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  getGif(input.value);
+  getDogByBreed(input.value);
+  input.value = '';
 });
-getDogByBreed('labrador');
+getDogByBreed();
+// 'labrador'
