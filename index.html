@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giphy Party!</title>
   <script src="app.js" defer></script>
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <link rel="stylesheet"
         href="https://bootswatch.com/4/darkly/bootstrap.min.css">
 </head>
 <body>
   <div class="container">
-  <h1>Find Your Breed</h1>
-    <form id="search-form">
-      <input type="text" id="gifs" placeholder="Gifs">
+  <h1 class="text-center mt-4 mb-4">Find Your Breed</h1>
+    <form id="search-form" class="form-inline d-flex justify-content-center mb-4">
+      <input type="text" id="gifs" name="search" class="form-control mr-2" placeholder="Search For Breed">
       <input class="btn btn-outline-danger" id="search-Btn" type="submit" value="Search Giphy!"/>
-      <button id="remove" type="submit" >Remove</button>
+      <button id="remove" type="button" class="btn btn-outline-danger mr-3">Remove</button>
     </form>
-    <div class="display" id="result">
+    <div class="row" id="result">
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
