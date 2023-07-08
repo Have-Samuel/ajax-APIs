@@ -99,7 +99,7 @@ async function getDogByBreed(breed) {
     img.src = res.data.message;
   } catch (e) {
     console.log(e);
-    alert('BREED NOT FOUND!!');
+    // alert('BREED NOT FOUND!!');
     getRandomDog();
   }
 }
