@@ -1,47 +1,42 @@
 /* eslint-disable no-undef */
 // api_key: 'WvwRyWWyOYCzSGKfBfTnvvQh52qw0oop'
-
-// 
-
+const gifArea = document.querySelector('#result');
+const input = document.querySelector('#search');
 const form = document.querySelector('#search-form');
-// const inputSearch = document.querySelector('#gifs');
+
+// Use ajax result to add a gif
+function addGif(res) {
+  const numResults = res.data.length;
+  if (numResults) {
+    const randomIdx = Math.floor(Math.random() * numResults);
+    const newCol = document.createElement('div');
+    newCol.classList.add('col-md-4', 'col-12', 'mb-4');
+    const newGif = document.createElement('img');
+    newGif.src = res.data[randomIdx].images.original.url;
+    newGif.classList.add('w-100');
+    newCol.append(newGif);
+    gifArea.append(newCol);
+  }
+}
+
+// Handle form submission: clear search box & make ajax call
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  
 
-  const response = axios.get('http://api.giphy.com/v1/gifs/search', {
+  const searchTerm = input.value;
+  input.value = '';
+
+  const response = await axios.get('http://api.giphy.com/v1/gifs/search', {
     params: {
-      q: input.value,
+      q: searchTerm,
       api_key: 'WvwRyWWyOYCzSGKfBfTnvvQh52qw0oop',
     },
   });
   addGif(response.data);
 });
 
-//   const res = await axios.get('https://dog.ceo/api/breeds/image/random');
-//   const show = document.querySelector('#result');
-//   const img = document.createElement('img');
-//   img.id = 'dog';
-//   img.src = res.data.message;
-//   show.append(img);
-// }
-
-// // Remove Button
-// const removeBtn = document.querySelector('#remove');
-// removeBtn.addEventListener('click', () => {
-//   const img = document.querySelector('#dog');
-//   img.remove();
-// });
-
-// async function getDogByBreed(breed) {
-//   try {
-//     const url = `https://dog.ceo/api/breed/${breed}/images/random`;
-//     const res = await axios.get(url);
-//     const img = document.querySelector('#dog');
-//     img.src = res.data.message;
-//   } catch (e) {
-//     console.log(e);
-//     // alert('BREED NOT FOUND!!');
-//     getRandomDog();
-//   }
-// }
+// Remove gif
+const remove = document.querySelector('#remove');
+remove.addEventListener('click', () => {
+  gifArea.innerHTML = '';
+});
