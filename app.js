@@ -75,6 +75,8 @@
 // });
 // // getGif();
 
+// api_key: 'WvwRyWWyOYCzSGKfBfTnvvQh52qw0oop'
+
 async function getRandomDog() {
   const res = await axios.get('https://dog.ceo/api/breeds/image/random');
   const show = document.querySelector('#result');
